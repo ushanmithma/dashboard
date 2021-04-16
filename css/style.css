@@ -1,0 +1,499 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #FF4B2B;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+header img {
+  height: 100%;
+}
+
+.logo {
+  height: 2em;
+  margin: 0.75em;
+}
+.logo i {
+  font-size: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .logo i {
+    display: none;
+  }
+}
+.logo i:hover {
+  cursor: pointer;
+}
+.logo img {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .logo img {
+    display: block;
+  }
+}
+
+.icons {
+  display: none;
+}
+.icons > div {
+  position: relative;
+}
+.icons > div .notifications-list {
+  display: none;
+  position: absolute;
+  min-width: 16em;
+  background-color: #FF4B2B;
+  list-style-type: none;
+  position: absolute;
+  top: calc(2em + (0.75em * 2));
+  left: -7em;
+  border-radius: 0.5em;
+  z-index: 1;
+}
+.icons > div .notifications-list::before {
+  content: "";
+  position: absolute;
+  top: -1.5em;
+  left: 7.25em;
+  border-style: solid;
+  border-width: 0.75em;
+  border-color: transparent transparent #FF4B2B transparent;
+}
+.icons > div .notifications-list li a {
+  display: block;
+  color: white;
+}
+.icons > div .notifications-list li a:hover,
+.icons > div .notifications-list li a:focus {
+  background-color: #ED213A;
+}
+.icons > div .notifications-list li h5 {
+  font-size: 0.9em;
+  padding: 0.5em 0.4em 0 0.34em;
+}
+.icons > div .notifications-list li p {
+  font-size: 0.7em;
+  padding: 0 0.4em 0.5em 0.4em;
+}
+.icons > div .notifications-list li {
+  position: relative;
+  margin: 1em 0;
+}
+.icons > div .notifications-list li::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: calc(100% - calc(0.4em * 2));
+  height: 1px;
+  background-color: #ED213A;
+  margin: 0.5em 0.4em;
+}
+.icons > div .notifications-list li:last-child::after {
+  display: none;
+}
+.icons > div .notifications-list.active {
+  display: block;
+}
+.icons i {
+  padding: 0.5em;
+}
+.icons i:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .icons {
+    display: block;
+  }
+}
+
+.search form {
+  position: relative;
+}
+.search form .search-result {
+  display: none;
+  position: absolute;
+  min-width: 10em;
+  background-color: #FF4B2B;
+  list-style-type: none;
+  position: absolute;
+  top: calc(2em + 0.75em);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.search form .search-result li a {
+  display: block;
+  color: white;
+}
+.search form .search-result li a:hover,
+.search form .search-result li a:focus {
+  background-color: #ED213A;
+}
+.search form .search-result li h5 {
+  font-size: 0.9em;
+  padding: 0.5em 0.4em 0 0.34em;
+}
+.search form .search-result li p {
+  font-size: 0.7em;
+  padding: 0 0.4em 0.5em 0.4em;
+}
+.search form .search-result li {
+  position: relative;
+  margin: 1em 0;
+}
+.search form .search-result li::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: calc(100% - calc(0.4em * 2));
+  height: 1px;
+  background-color: #ED213A;
+  margin: 0.5em 0.4em;
+}
+.search form .search-result li:last-child::after {
+  display: none;
+}
+.search label {
+  display: flex;
+  align-items: center;
+}
+.search label > div {
+  height: 2em;
+  background-color: white;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  display: flex;
+  align-items: center;
+}
+.search label > div i {
+  padding: 0 0.25em;
+  color: black;
+  font-size: 1em;
+}
+.search input {
+  width: 10em;
+  border: 0;
+  height: 2em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.user > div {
+  position: relative;
+}
+.user > div ul {
+  display: none;
+  min-width: 10em;
+  background-color: #FF4B2B;
+  list-style-type: none;
+  position: absolute;
+  top: calc(2em + calc(0.75em * 2));
+  right: 0;
+  z-index: 1;
+}
+.user > div ul a {
+  color: white;
+  display: block;
+  padding: 0.75em 0.6em;
+}
+.user > div ul a span {
+  padding: 0.25em;
+  background-color: white;
+  color: #ED213A;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.user > div ul a:hover,
+.user > div ul a:focus {
+  background-color: #ED213A;
+}
+@media only screen and (min-width: 768px) {
+  .user > div ul li:nth-child(4) {
+    display: none;
+  }
+}
+.user > div ul li:nth-last-child(2) {
+  position: relative;
+  margin-bottom: -0.5em;
+}
+.user > div ul li:nth-last-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - calc(0.4em * 2));
+  height: 1px;
+  background-color: #ED213A;
+  margin: 0 0.4em;
+  margin-top: 0.5em;
+}
+.user > div ul.active {
+  display: block;
+}
+.user .user-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user .user-details .name {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .user .user-details .name {
+    display: block;
+  }
+}
+.user .user-details .name h2 {
+  font-size: 0.9em;
+  line-height: 1;
+}
+.user .user-details .name p {
+  font-size: 0.75em;
+  color: white;
+}
+.user .avatar {
+  height: 2em;
+  margin: 0.75em;
+}
+.user img {
+  border-radius: 50%;
+}
+
+aside {
+  transform: translateX(-100%);
+  position: fixed;
+  left: 0;
+  overflow-y: auto;
+  width: 250px;
+  height: calc(100vh - calc(2em + calc(0.75em * 2)));
+  background: -webkit-linear-gradient(to top, #FF416C, #FF4B2B);
+  background: linear-gradient(to top, #FF416C, #FF4B2B);
+  color: white;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1;
+}
+@media only screen and (min-width: 768px) {
+  aside {
+    transform: translateX(0px);
+  }
+}
+aside > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+aside .top, aside .bottom {
+  position: relative;
+}
+aside .top:after {
+  content: "";
+  top: 100%;
+  left: 0.75em;
+  right: 0.75em;
+  position: absolute;
+  margin: 0.5em 0;
+  width: calc(100% - calc(0.75em * 2));
+  height: 1px;
+  background-color: #ED213A;
+}
+aside .bottom:before {
+  content: "";
+  top: -0.5em;
+  left: 0.75em;
+  right: 0.75em;
+  position: absolute;
+  margin: 0.5em 0;
+  width: calc(100% - calc(0.75em * 2));
+  height: 1px;
+  background-color: #ED213A;
+}
+
+aside.active {
+  transform: translateX(0px);
+}
+
+aside ul {
+  list-style-type: none;
+}
+
+aside ul li {
+  margin: 0.5em 0;
+}
+
+aside ul li h2 {
+  margin-top: 0.75em;
+  padding-left: 0.5em;
+}
+
+aside ul li > ul {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.2s ease-out;
+}
+
+aside ul li > ul li {
+  margin: 0;
+}
+
+aside ul li > ul li a {
+  padding-left: 2em;
+  font-size: 0.9em;
+}
+
+aside ul a {
+  color: white;
+  display: block;
+  padding: 0.6em 0.75em;
+}
+
+aside ul li.active a {
+  background-color: #ED213A;
+}
+
+aside ul a:hover,
+aside ul a:focus {
+  background-color: #ED213A;
+}
+
+main {
+  transition: margin-left 0.2s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    margin-left: 250px;
+  }
+}
+
+main.active {
+  margin-left: 250px;
+}
+
+main section {
+  margin: 0.87em;
+}
+
+section .heading {
+  position: relative;
+}
+
+.heading h1 {
+  padding: 0.75em 0.43em 0.75em 0;
+  background-color: white;
+  display: inline-block;
+}
+
+.heading:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  top: 55%;
+  z-index: -1;
+  background-color: #ED213A;
+}
+
+/*# sourceMappingURL=style.css.map */
