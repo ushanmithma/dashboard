@@ -24,6 +24,9 @@ dropdownBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		let dropdown = document.querySelector(button.dataset.toggle);
 		dropdown.classList.toggle('active');
+		if (button === document.querySelector('#bellIcon')) {
+			removeNotificationDot(button);
+		}
 	});
 });
 
@@ -35,6 +38,10 @@ window.addEventListener("click", function(e) {
 		}
 	});
 });
+
+function removeNotificationDot(element) {
+	element.classList.remove('alert-dot');
+}
 
 // Responsive menu control
 

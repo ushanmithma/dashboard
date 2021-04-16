@@ -194,6 +194,20 @@ header img {
 .icons i {
   padding: 0.5em;
 }
+.icons .alert-dot {
+  position: relative;
+}
+.icons .alert-dot::after {
+  content: "";
+  font-size: 0.8em;
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 0.5em;
+  right: 0.5em;
+  border-radius: 50%;
+  background-color: white;
+}
 .icons i:hover {
   cursor: pointer;
 }

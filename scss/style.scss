@@ -129,9 +129,25 @@ header {
             display: block;
         }
     }
-
+    
     i {
         padding: 0.5em;
+    }
+
+    .alert-dot {
+        position: relative;
+
+        &::after {
+            content: '';
+            font-size: 0.8em;
+            position: absolute;
+            width: 0.5em;
+            height: 0.5em;
+            top: 0.5em;
+            right: 0.5em;
+            border-radius: 50%;
+            background-color: white;
+        }
     }
 
     i:hover {
