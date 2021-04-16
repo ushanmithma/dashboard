@@ -69,8 +69,8 @@ header {
             background-color: #FF4B2B;
             list-style-type: none;
             position: absolute;
-            top: calc(2em + (0.75em * 2));
-            left: -7em;
+            top: calc(calc(1.2em + calc(0.5em * 2)) + (0.75em * 2));
+            left: -6.8em;
             border-radius: 0.5em;
             z-index: 1;
 
@@ -132,6 +132,7 @@ header {
     
     i {
         padding: 0.5em;
+        font-size: 1.2em;
     }
 
     .alert-dot {
@@ -139,12 +140,11 @@ header {
 
         &::after {
             content: '';
-            font-size: 0.8em;
             position: absolute;
             width: 0.5em;
             height: 0.5em;
-            top: 0.5em;
-            right: 0.5em;
+            top: 0.3em;
+            right: 0.3em;
             border-radius: 50%;
             background-color: white;
         }
@@ -344,6 +344,11 @@ header {
 
     img {
         border-radius: 50%;
+    }
+
+    img:hover,
+    img:focus {
+        cursor: pointer;
     }
 }
 
