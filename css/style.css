@@ -201,11 +201,12 @@ header img {
 .icons .alert-dot::after {
   content: "";
   position: absolute;
-  width: 0.5em;
-  height: 0.5em;
-  top: 0.3em;
-  right: 0.3em;
+  width: 10px;
+  height: 10px;
+  top: 0.35em;
+  right: 0.35em;
   border-radius: 50%;
+  border: 1px solid #ED213A;
   background-color: white;
 }
 .icons i:hover {
@@ -372,8 +373,7 @@ header img {
 .user img {
   border-radius: 50%;
 }
-.user img:hover,
-.user img:focus {
+.user img:hover {
   cursor: pointer;
 }
 
@@ -490,7 +490,7 @@ main.active {
 }
 
 main section {
-  margin: 0.87em;
+  margin: 1.5em;
 }
 
 section .heading {
@@ -498,7 +498,7 @@ section .heading {
 }
 
 .heading h1 {
-  padding: 0.75em 0.43em 0.75em 0;
+  padding-right: 0.43em;
   background-color: white;
   display: inline-block;
 }
