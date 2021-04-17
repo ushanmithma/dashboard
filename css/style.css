@@ -345,6 +345,9 @@ header img {
 .user > div ul.active {
   display: block;
 }
+.user > div ul:focus-within {
+  display: block;
+}
 .user .user-details {
   display: flex;
   flex-direction: row;

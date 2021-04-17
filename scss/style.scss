@@ -313,6 +313,10 @@ header {
     > div ul.active {
         display: block;
     }
+    
+    > div ul:focus-within {
+        display: block;
+    }
 
     .user-details {
         display: flex;
