@@ -11,5 +11,9 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "jquery": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greatestlord/dashboard.git"
   }
 }
