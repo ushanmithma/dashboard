@@ -107,7 +107,7 @@ html[data-theme=dark] {
   --clr-dark: #333333;
   --clr-primary: #004e92;
   --clr-secondary: #000428;
-  --clr-accent: #000000;
+  --clr-accent: #1b1b1b;
   --foreground: var(--clr-light);
   --background: var(--clr-dark);
 }
@@ -471,29 +471,13 @@ aside > div {
   flex-direction: column;
   justify-content: space-between;
 }
-aside .top, aside .bottom {
-  position: relative;
-}
-aside .top:after {
-  content: "";
-  top: 100%;
-  left: 0.75em;
-  right: 0.75em;
-  position: absolute;
-  margin: 0.5em 0;
-  width: calc(100% - calc(0.75em * 2));
+
+aside > div > div hr {
+  border: none;
   height: 1px;
-  background-color: var(--clr-accent);
-}
-aside .bottom:before {
-  content: "";
-  top: -0.5em;
-  left: 0.75em;
-  right: 0.75em;
-  position: absolute;
-  margin: 0.5em 0;
   width: calc(100% - calc(0.75em * 2));
-  height: 1px;
+  margin-inline: auto;
+  color: var(--clr-accent);
   background-color: var(--clr-accent);
 }
 
