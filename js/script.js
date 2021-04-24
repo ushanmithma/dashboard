@@ -79,9 +79,11 @@ function removeNotificationDot(element) {
 
 const menuIcon = document.querySelector('.menu-icon');
 const sidemenu = document.querySelector('.sidemenu');
+const header = document.querySelector('header');
 const main = document.querySelector('main');
 
 menuIcon.addEventListener("click", function() {
 	sidemenu.classList.toggle('active');
+	header.classList.toggle('active');
 	main.classList.toggle('active');
 });

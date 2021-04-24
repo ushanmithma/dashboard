@@ -124,9 +124,29 @@ header {
   justify-content: space-between;
   align-items: center;
   color: var(--clr-light);
+  transition: margin-left 0.2s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  header {
+    background-color: transparent;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+  }
 }
 header img {
   height: 100%;
+}
+
+header.active {
+  margin-left: 250px;
+}
+
+header .left, .right {
+  display: flex;
+  align-items: center;
+}
+header .left > div + div, .right > div + div {
+  margin-left: 3em;
 }
 
 .toggle-switch {
@@ -170,37 +190,37 @@ header img {
   border-radius: 50%;
 }
 
-.logo {
+header .logo {
   height: 2em;
   margin: 0.75em;
 }
-.logo i {
+header .logo i {
   font-size: 2em;
 }
 @media only screen and (min-width: 768px) {
-  .logo i {
+  header .logo i {
     display: none;
   }
 }
-.logo i:hover {
+header .logo i:hover {
   cursor: pointer;
 }
-.logo img {
+header .logo img {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  .logo img {
+  header .logo img {
     display: block;
   }
 }
 
-.icons {
+header .icons {
   display: none;
 }
-.icons > div {
+header .icons > div {
   position: relative;
 }
-.icons > div .notifications-list {
+header .icons > div .notifications-list {
   display: none;
   position: absolute;
   min-width: 16em;
@@ -212,7 +232,7 @@ header img {
   border-radius: 0.5em;
   z-index: 1;
 }
-.icons > div .notifications-list::before {
+header .icons > div .notifications-list::before {
   content: "";
   position: absolute;
   top: -1.5em;
@@ -221,27 +241,27 @@ header img {
   border-width: 0.75em;
   border-color: transparent transparent var(--clr-primary) transparent;
 }
-.icons > div .notifications-list li a {
+header .icons > div .notifications-list li a {
   display: block;
   color: var(--clr-light);
 }
-.icons > div .notifications-list li a:hover,
-.icons > div .notifications-list li a:focus {
+header .icons > div .notifications-list li a:hover,
+header .icons > div .notifications-list li a:focus {
   background-color: var(--clr-accent);
 }
-.icons > div .notifications-list li h5 {
+header .icons > div .notifications-list li h5 {
   font-size: 0.9em;
   padding: 0.5em 0.4em 0 0.34em;
 }
-.icons > div .notifications-list li p {
+header .icons > div .notifications-list li p {
   font-size: 0.7em;
   padding: 0 0.4em 0.5em 0.4em;
 }
-.icons > div .notifications-list li {
+header .icons > div .notifications-list li {
   position: relative;
   margin: 1em 0;
 }
-.icons > div .notifications-list li::after {
+header .icons > div .notifications-list li::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -251,20 +271,21 @@ header img {
   background-color: var(--clr-accent);
   margin: 0.5em 0.4em;
 }
-.icons > div .notifications-list li:last-child::after {
+header .icons > div .notifications-list li:last-child::after {
   display: none;
 }
-.icons > div .notifications-list.active {
+header .icons > div .notifications-list.active {
   display: block;
 }
-.icons i {
+header .icons i {
   padding: 0.5em;
   font-size: 1.2em;
+  color: var(--foreground);
 }
-.icons .alert-dot {
+header .icons .alert-dot {
   position: relative;
 }
-.icons .alert-dot::after {
+header .icons .alert-dot::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -273,21 +294,26 @@ header img {
   right: 0.35em;
   border-radius: 50%;
   border: 1px solid var(--clr-primary);
-  background-color: var(--clr-light);
+  background-color: var(--foreground);
 }
-.icons i:hover {
+@media only screen and (min-width: 768px) {
+  header .icons .alert-dot::after {
+    border-color: var(--background);
+  }
+}
+header .icons i:hover {
   cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
-  .icons {
+  header .icons {
     display: block;
   }
 }
 
-.search form {
+header .search form {
   position: relative;
 }
-.search form .search-result {
+header .search form .search-result {
   display: none;
   position: absolute;
   min-width: 10em;
@@ -301,27 +327,27 @@ header img {
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
 }
-.search form .search-result li a {
+header .search form .search-result li a {
   display: block;
   color: var(--clr-light);
 }
-.search form .search-result li a:hover,
-.search form .search-result li a:focus {
+header .search form .search-result li a:hover,
+header .search form .search-result li a:focus {
   background-color: var(--clr-accent);
 }
-.search form .search-result li h5 {
+header .search form .search-result li h5 {
   font-size: 0.9em;
   padding: 0.5em 0.4em 0 0.34em;
 }
-.search form .search-result li p {
+header .search form .search-result li p {
   font-size: 0.7em;
   padding: 0 0.4em 0.5em 0.4em;
 }
-.search form .search-result li {
+header .search form .search-result li {
   position: relative;
   margin: 1em 0;
 }
-.search form .search-result li::after {
+header .search form .search-result li::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -331,39 +357,40 @@ header img {
   background-color: var(--clr-accent);
   margin: 0.5em 0.4em;
 }
-.search form .search-result li:last-child::after {
+header .search form .search-result li:last-child::after {
   display: none;
 }
-.search label {
+header .search label {
   display: flex;
   align-items: center;
 }
-.search label > div {
+header .search label > div {
   height: 2em;
-  background-color: var(--clr-light);
+  background-color: var(--clr-accent);
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   display: flex;
   align-items: center;
 }
-.search label > div i {
-  padding: 0 0.25em;
-  color: var(--clr-dark);
+header .search label > div i {
+  padding: 0 0.5em;
+  color: var(--clr-light);
   font-size: 1em;
 }
-.search input {
+header .search input {
   width: 10em;
   border: 0;
   height: 2em;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
-  background-color: var(--clr-light);
+  color: var(--clr-light);
+  background-color: var(--clr-accent);
 }
 
-.user > div {
+header .user > div {
   position: relative;
 }
-.user > div ul {
+header .user > div ul {
   display: none;
   min-width: 10em;
   background-color: var(--clr-primary);
@@ -373,32 +400,32 @@ header img {
   right: 0;
   z-index: 1;
 }
-.user > div ul a {
+header .user > div ul a {
   color: var(--clr-light);
   display: block;
   padding: 0.75em 0.6em;
 }
-.user > div ul a span {
+header .user > div ul a span {
   padding: 0.25em;
   background-color: var(--clr-light);
   color: var(--clr-accent);
   border-radius: 50%;
   vertical-align: middle;
 }
-.user > div ul a:hover,
-.user > div ul a:focus {
+header .user > div ul a:hover,
+header .user > div ul a:focus {
   background-color: var(--clr-accent);
 }
 @media only screen and (min-width: 768px) {
-  .user > div ul li:nth-child(4) {
+  header .user > div ul li:nth-child(4) {
     display: none;
   }
 }
-.user > div ul li:nth-last-child(2) {
+header .user > div ul li:nth-last-child(2) {
   position: relative;
   margin-bottom: -0.5em;
 }
-.user > div ul li:nth-last-child(2)::after {
+header .user > div ul li:nth-last-child(2)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -409,51 +436,53 @@ header img {
   margin: 0 0.4em;
   margin-top: 0.5em;
 }
-.user > div ul.active {
+header .user > div ul.active {
   display: block;
 }
-.user > div ul:focus-within {
+header .user > div ul:focus-within {
   display: block;
 }
-.user .user-details {
+header .user .user-details {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.user .user-details .name {
+header .user .user-details .name {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  .user .user-details .name {
+  header .user .user-details .name {
     display: block;
   }
 }
-.user .user-details .name h2 {
+header .user .user-details .name h2 {
   font-size: 0.9em;
   line-height: 1;
+  color: var(--foreground);
 }
-.user .user-details .name p {
+header .user .user-details .name p {
   font-size: 0.75em;
-  color: var(--clr-light);
+  color: var(--foreground);
 }
-.user .avatar {
+header .user .avatar {
   height: 2em;
   margin: 0.75em;
 }
-.user img {
+header .user img {
   border-radius: 50%;
 }
-.user img:hover {
+header .user img:hover {
   cursor: pointer;
 }
 
 aside {
   transform: translateX(-100%);
   position: fixed;
+  top: 0;
   left: 0;
   overflow-y: auto;
   width: 250px;
-  height: calc(100vh - calc(2em + calc(0.75em * 2)));
+  height: 100vh;
   background: -webkit-radial-gradient(circle at 0% 80%, var(--clr-secondary), var(--clr-primary));
   background: radial-gradient(circle at 0% 80%, var(--clr-secondary), var(--clr-primary));
   color: var(--clr-light);
@@ -517,8 +546,18 @@ aside ul li > ul li a {
 
 aside ul a {
   color: var(--clr-light);
-  display: block;
+  display: flex;
   padding: 0.6em 0.75em;
+  align-items: center;
+}
+
+aside ul a i {
+  width: 1.6em;
+  display: inline-block;
+}
+
+aside ul a span {
+  display: inline-block;
 }
 
 aside ul li.active a {

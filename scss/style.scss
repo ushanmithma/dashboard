@@ -51,9 +51,29 @@ header {
     justify-content: space-between;
     align-items: center;
     color: var(--clr-light);
+    transition: margin-left 0.2s ease-in-out;
+    
+    @include mx.mq ('medium') {
+        background-color: transparent;
+        width: calc(100% - 250px);
+        margin-left: 250px;
+    }
 
     img {
         height: 100%;
+    }
+}
+
+header.active {
+    margin-left: 250px;
+}
+
+header .left, .right {
+    display: flex;
+    align-items: center;
+
+    > div + div {
+        margin-left: 3em;
     }
 }
 
@@ -103,7 +123,7 @@ header {
     }
 }
 
-.logo {
+header .logo {
     height: 2em;
     margin: 0.75em;
 
@@ -129,7 +149,7 @@ header {
     }
 }
 
-.icons {
+header .icons {
     display: none;
 
     > div {
@@ -206,6 +226,7 @@ header {
     i {
         padding: 0.5em;
         font-size: 1.2em;
+        color: var(--foreground);
     }
 
     .alert-dot {
@@ -220,7 +241,11 @@ header {
             right: 0.35em;
             border-radius: 50%;
             border: 1px solid var(--clr-primary);
-            background-color: var(--clr-light);
+            background-color: var(--foreground);
+
+            @include mx.mq ('medium') {
+                border-color: var(--background);
+            }
         }
     }
 
@@ -233,7 +258,7 @@ header {
     }
 }
 
-.search {
+header .search {
 
     form {
         position: relative;
@@ -301,15 +326,15 @@ header {
 
     label > div {
         height: 2em;
-        background-color: var(--clr-light);
+        background-color: var(--clr-accent);
         border-top-left-radius: 2em;
         border-bottom-left-radius: 2em;
         display: flex;
         align-items: center;
         
         i {
-            padding: 0 0.25em;
-            color: var(--clr-dark);
+            padding: 0 0.5em;
+            color: var(--clr-light);
             font-size: 1em;
         }
     }
@@ -321,11 +346,12 @@ header {
         height: 2em;
         border-top-right-radius: 2em;
         border-bottom-right-radius: 2em;
-        background-color: var(--clr-light);
+        color: var(--clr-light);
+        background-color: var(--clr-accent);
     }
 }
 
-.user {
+header .user {
     
     > div {
         position: relative;
@@ -409,11 +435,12 @@ header {
     .user-details .name h2 {
         font-size: 0.9em;
         line-height: 1;
+        color: var(--foreground);
     }
     
     .user-details .name p {
         font-size: 0.75em;
-        color: var(--clr-light);
+        color: var(--foreground);
     }
     
     .avatar {
@@ -437,10 +464,11 @@ header {
 aside {
     transform: translateX(-100%);
     position: fixed;
+    top: 0;
     left: 0;
     overflow-y: auto;
     width: 250px;
-    height: calc(100vh - calc(2em + calc(0.75em * 2)));
+    height: 100vh;
     background: -webkit-radial-gradient(circle at 0% 80%, var(--clr-secondary), var(--clr-primary));
     background: radial-gradient(circle at 0% 80%, var(--clr-secondary), var(--clr-primary));
     color: var(--clr-light);
@@ -504,8 +532,18 @@ aside ul li > ul li a {
 
 aside ul a {
     color: var(--clr-light);
-    display: block;
+    display: flex;
     padding: 0.6em 0.75em;
+    align-items: center;
+}
+
+aside ul a i {
+    width: 1.6em;
+    display: inline-block;
+}
+
+aside ul a span {
+    display: inline-block;
 }
 
 aside ul li.active a {
