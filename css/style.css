@@ -145,8 +145,10 @@ header .left, .right {
   display: flex;
   align-items: center;
 }
-header .left > div + div, .right > div + div {
-  margin-left: 3em;
+@media only screen and (min-width: 768px) {
+  header .left > div + div, .right > div + div {
+    margin-left: 3em;
+  }
 }
 
 .toggle-switch {
@@ -465,7 +467,7 @@ header .user .user-details .name p {
   color: var(--foreground);
 }
 header .user .avatar {
-  height: 2em;
+  width: 2em;
   margin: 0.75em;
 }
 header .user img {

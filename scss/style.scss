@@ -72,8 +72,10 @@ header .left, .right {
     display: flex;
     align-items: center;
 
-    > div + div {
-        margin-left: 3em;
+    @include mx.mq ('medium') {
+        > div + div {
+            margin-left: 3em;
+        }
     }
 }
 
@@ -444,7 +446,7 @@ header .user {
     }
     
     .avatar {
-        height: 2em;
+        width: 2em;
         margin: 0.75em;
     }
 
