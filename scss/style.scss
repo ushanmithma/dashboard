@@ -165,7 +165,7 @@ header .icons {
             list-style-type: none;
             position: absolute;
             top: calc(calc(1.2em + calc(0.5em * 2)) + (0.75em * 2));
-            left: -6.8em;
+            left: -6.5em;
             border-radius: 0.5em;
             z-index: 1;
 
@@ -227,7 +227,7 @@ header .icons {
     
     i {
         padding: 0.5em;
-        font-size: 1.2em;
+        font-size: 1.5em;
         color: var(--foreground);
     }
 
@@ -337,7 +337,7 @@ header .search {
         i {
             padding: 0 0.5em;
             color: var(--clr-light);
-            font-size: 1em;
+            font-size: 1.5em;
         }
     }
 
@@ -552,8 +552,7 @@ aside ul li.active a {
     background-color: var(--clr-accent);
 }
 
-aside ul a:hover,
-aside ul a:focus {
+aside ul a:hover {
     background-color: var(--clr-accent);
 }
 

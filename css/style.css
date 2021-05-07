@@ -230,7 +230,7 @@ header .icons > div .notifications-list {
   list-style-type: none;
   position: absolute;
   top: calc(calc(1.2em + calc(0.5em * 2)) + (0.75em * 2));
-  left: -6.8em;
+  left: -6.5em;
   border-radius: 0.5em;
   z-index: 1;
 }
@@ -281,7 +281,7 @@ header .icons > div .notifications-list.active {
 }
 header .icons i {
   padding: 0.5em;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: var(--foreground);
 }
 header .icons .alert-dot {
@@ -377,7 +377,7 @@ header .search label > div {
 header .search label > div i {
   padding: 0 0.5em;
   color: var(--clr-light);
-  font-size: 1em;
+  font-size: 1.5em;
 }
 header .search input {
   width: 10em;
@@ -566,8 +566,7 @@ aside ul li.active a {
   background-color: var(--clr-accent);
 }
 
-aside ul a:hover,
-aside ul a:focus {
+aside ul a:hover {
   background-color: var(--clr-accent);
 }
 

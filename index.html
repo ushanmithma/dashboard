@@ -9,7 +9,7 @@
     <link rel="icon" sizes="512x512" href="./img/android-chrome-512x512.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
-    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Dashboard</title>
 </head>
@@ -19,12 +19,12 @@
         <div class="left">
             <div class="logo">
                 <img src="./img/logo.png" alt="logo">
-                <i class="fas fa-bars menu-icon"></i>
+                <i class="material-icons menu-icon">menu</i>
             </div>
             <div class="search">
                 <form action="" method="">
                     <label for="search">
-                        <div><i class="fas fa-search"></i></div>
+                        <div><i class="material-icons">search</i></div>
                         <input type="search" name="search" id="search" placeholder="Search for...">
                     </label>
                     <ul class="search-result">
@@ -59,7 +59,7 @@
         <div class="right">
             <div class="icons">
                 <div>
-                    <i data-toggle="#notificationsList" id="bellIcon" class="dropdown-btn alert-dot fas fa-bell"></i>
+                    <i data-toggle="#notificationsList" id="bellIcon" class="dropdown-btn alert-dot material-icons">notifications</i>
                     <ul id="notificationsList" class="notifications-list">
                         <li>
                             <a href="#">
@@ -127,30 +127,30 @@
             <div>
                 <ul class="top">
                     <li><h2>General</h2></li>
-                    <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="active"><a href="#"><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
                     <li>
-                        <a href="#" class="accordion"><i class="fas fa-layer-group"></i><span>Product</span></a>
+                        <a href="#" class="accordion"><i class="material-icons">inventory_2</i><span>Product</span></a>
                         <ul>
-                            <li><a href="#"><i class="far fa-save"></i><span>Add</span></a></li>
-                            <li><a href="#"><i class="fas fa-list-ul"></i><span>View</span></a></li>
-                            <li><a href="#"><i class="far fa-edit"></i><span>Update</span></a></li>
-                            <li><a href="#"><i class="far fa-trash-alt"></i><span>Delete</span></a></li>
+                            <li><a href="#"><i class="material-icons">save</i><span>Add</span></a></li>
+                            <li><a href="#"><i class="material-icons">view_headline</i><span>View</span></a></li>
+                            <li><a href="#"><i class="material-icons">edit</i><span>Update</span></a></li>
+                            <li><a href="#"><i class="material-icons">delete</i><span>Delete</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fas fa-layer-group"></i><span>Post</span></a></li>
-                    <li><a href="#"><i class="fas fa-layer-group"></i><span>Client</span></a></li>
-                    <li><a href="#"><i class="fas fa-users"></i><span>User</span></a></li>
+                    <li><a href="#"><i class="material-icons">post_add</i><span>Post</span></a></li>
+                    <li><a href="#"><i class="material-icons">person_search</i><span>Client</span></a></li>
+                    <li><a href="#"><i class="material-icons">person</i><span>User</span></a></li>
                 </ul>
                 <hr>
                 <ul>
                     <li><h2>Special</h2></li>
-                    <li><a href="#"><i class="far fa-check-circle"></i><span>Published</span></a></li>
+                    <li><a href="#"><i class="material-icons">publish</i><span>Published</span></a></li>
                 </ul>
             </div>
             <div>
                 <hr>
                 <ul>
-                    <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                    <li><a href="#"><i class="material-icons">settings</i><span>Settings</span></a></li>
                 </ul>
             </div>
         </div>
@@ -167,7 +167,7 @@
 
     <footer></footer>
 
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/script.js" defer></script>
 
 </body>
