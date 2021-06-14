@@ -124,6 +124,7 @@ header {
   justify-content: space-between;
   align-items: center;
   color: var(--clr-light);
+  width: 100%;
   transition: margin-left 0.2s ease-in-out;
 }
 @media only screen and (min-width: 768px) {

@@ -51,6 +51,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: var(--clr-light);
+    width: 100%;
     transition: margin-left 0.2s ease-in-out;
     
     @include mx.mq ('medium') {
@@ -268,7 +269,7 @@ header .search {
         .search-result {
             display: none;
             position: absolute;
-            min-width: 10em;
+            min-width: 10em;           
             background-color: var(--clr-primary);
             list-style-type: none;
             position: absolute;
