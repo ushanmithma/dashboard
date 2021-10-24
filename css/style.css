@@ -1,3 +1,25 @@
+html[data-theme=light] {
+  --clr-light: #ffffff;
+  --clr-dark: #00332a;
+  --clr-primary: #ff4b2b;
+  --clr-secondary: #ff416c;
+  --clr-accent: #ED213A;
+  --clr-gray: #a6a6a6;
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+}
+
+html[data-theme=dark] {
+  --clr-light: #b5b5b5;
+  --clr-dark: #333333;
+  --clr-primary: #004e92;
+  --clr-secondary: #000428;
+  --clr-accent: #1b1b1b;
+  --clr-gray: #a6a6a6;
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -83,30 +105,94 @@ input:focus {
   outline: none;
 }
 
+.login-wrapper {
+  max-width: 380px;
+  width: 100%;
+}
+
+.input-box {
+  position: relative;
+  height: 3em;
+  margin: 1.5em 0;
+}
+.input-box--textarea {
+  height: max-content;
+}
+.input-box input, .input-box button, .input-box textarea {
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0 0.75em;
+  border-radius: 0.375em;
+  color: var(--foreground);
+}
+.input-box input, .input-box textarea {
+  background-color: var(--background);
+  border: 2px solid var(--clr-gray);
+  transition: border-color 200ms ease;
+}
+.input-box input:focus, .input-box input:valid, .input-box textarea:focus, .input-box textarea:valid {
+  border-color: var(--clr-primary);
+}
+.input-box input:focus ~ label, .input-box input:valid ~ label, .input-box textarea:focus ~ label, .input-box textarea:valid ~ label {
+  color: var(--clr-primary);
+}
+.input-box button {
+  border: none;
+  background-color: var(--clr-primary);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.input-box button:hover {
+  background-color: var(--clr-secondary);
+}
+.input-box label, .input-box span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-gray);
+}
+.input-box label {
+  top: 0;
+  left: 1.125em;
+  font-size: 1em;
+  pointer-events: none;
+  font-weight: 400;
+  font-size: 0.75em;
+  transition: all 200ms ease;
+  background-color: var(--background);
+  padding: 0 0.375em;
+}
+.input-box span {
+  right: 0.75em;
+  cursor: pointer;
+}
+
+.container {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-inline: auto;
+  max-width: 1200px;
+}
+
+.center-item {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid {
+  width: 92%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html[data-theme=light] {
-  --clr-light: #ffffff;
-  --clr-dark: #00332a;
-  --clr-primary: #ff4b2b;
-  --clr-secondary: #ff416c;
-  --clr-accent: #ED213A;
-  --foreground: var(--clr-dark);
-  --background: var(--clr-light);
-}
-
-html[data-theme=dark] {
-  --clr-light: #b5b5b5;
-  --clr-dark: #333333;
-  --clr-primary: #004e92;
-  --clr-secondary: #000428;
-  --clr-accent: #1b1b1b;
-  --foreground: var(--clr-light);
-  --background: var(--clr-dark);
 }
 
 body {
@@ -142,12 +228,14 @@ header.active {
   transform: translateX(250px);
 }
 
-header .left, .right {
+header .left,
+header .right {
   display: flex;
   align-items: center;
 }
 @media only screen and (min-width: 768px) {
-  header .left > div + div, .right > div + div {
+  header .left > div + div,
+header .right > div + div {
     margin-left: 3em;
   }
 }
@@ -403,10 +491,17 @@ header .user > div ul {
   right: 0;
   z-index: 1;
 }
-header .user > div ul a {
+header .user > div ul a, header .user > div ul button {
   color: var(--clr-light);
   display: block;
   padding: 0.75em 0.6em;
+}
+header .user > div ul button {
+  width: 100%;
+  text-align-last: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 header .user > div ul a span {
   padding: 0.25em;
@@ -416,7 +511,9 @@ header .user > div ul a span {
   vertical-align: middle;
 }
 header .user > div ul a:hover,
-header .user > div ul a:focus {
+header .user > div ul a:focus,
+header .user > div ul button:hover,
+header .user > div ul button:focus {
   background-color: var(--clr-accent);
 }
 @media only screen and (min-width: 768px) {
@@ -580,6 +677,7 @@ main {
 }
 @media only screen and (min-width: 768px) {
   main {
+    width: calc(100% - 250px);
     transform: translateX(250px);
   }
 }
